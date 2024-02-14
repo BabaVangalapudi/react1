@@ -1,0 +1,22 @@
+.displaycont{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+.avatarbox{
+    height: 40px;
+    width: 40px;
+    background-color: blueviolet;
+    color: aliceblue;
+    border-radius: 50%;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+p{
+    padding: 0px;
+    margin: 0px;
+}
