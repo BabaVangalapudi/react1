@@ -7,10 +7,16 @@ const CommentsCont = () =>{
     const [name, setName] = useState('')
     const [comment,setComment] = useState('')
     const [commentList, setCommentList] = useState([])
+    const [error, setError] = useState("");
     const onChangeName = event => setName(event.target.value)
     const onChangeComment = event => setComment(event.target.value)
     const addComment = (event)=>{
         event.preventDefault ()
+        if (name.trim() === "" || comment.trim() === "") {
+            setError("Please enter both your name and comment.");
+            return;
+          }
+        setError("");
         setName('')
         setComment('')
         const newComment = {
@@ -29,6 +35,7 @@ const CommentsCont = () =>{
             <textarea className="inputtext" rows={4} cols={10} placeholder="Your Comment" value={comment} onChange={onChangeComment}></textarea>
             <button type="submit">Add Comment</button>
         </form>
+        {error && <p style={{ color: "red" }}>{error}</p>}
         <ul style={{listStyleType: 'none'}}>
             
                { commentList.map((eachComment)=>(
